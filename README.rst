@@ -9,8 +9,8 @@ Introduction
     :target: https://discord.gg/nBQh6qu
     :alt: Discord
 
-.. image:: https://travis-ci.com/adafruit/Adafruit_CircuitPython_SSD1331.svg?branch=master
-    :target: https://travis-ci.com/adafruit/Adafruit_CircuitPython_SSD1331
+.. image:: https://github.com/adafruit/Adafruit_CircuitPython_SSD1331/workflows/Build%20CI/badge.svg
+    :target: https://github.com/adafruit/Adafruit_CircuitPython_SSD1331/actions/
     :alt: Build Status
 
 displayio drivers for SSD1331 Displays
