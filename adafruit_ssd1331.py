@@ -49,11 +49,11 @@ __version__ = "0.0.0-auto.0"
 __repo__ = "https://github.com/adafruit/Adafruit_CircuitPython_SSD1331.git"
 
 _INIT_SEQUENCE = (
-    b"\xAE\x00"      # _DISPLAYOFF
+    b"\xAE\x00"  # _DISPLAYOFF
     b"\xA0\x01\x72"  # _SETREMAP (RGB)
     b"\xA1\x01\x00"  # _STARTLINE
     b"\xA2\x01\x00"  # _DISPLAYOFFSET
-    b"\xA4\x00"      # _NORMALDISPLAY
+    b"\xA4\x00"  # _NORMALDISPLAY
     b"\xA8\x01\x3F"  # _SETMULTIPLEX (1/64 duty)
     b"\xAD\x01\x8E"  # _SETMASTER
     b"\xB0\x01\x0B"  # _POWERMODE
@@ -68,13 +68,20 @@ _INIT_SEQUENCE = (
     b"\x81\x01\x91"  # _CONTRASTA
     b"\x82\x01\x50"  # _CONTRASTB
     b"\x83\x01\x7D"  # _CONTRASTC
-    b"\xAF\x00"      # _DISPLAYON
+    b"\xAF\x00"  # _DISPLAYON
 )
 
 # pylint: disable=too-few-public-methods
 class SSD1331(displayio.Display):
     """SSD1331 driver"""
+
     def __init__(self, bus, **kwargs):
-        super().__init__(bus, _INIT_SEQUENCE, **kwargs, set_column_command=0x15,
-                         set_row_command=0x75, single_byte_bounds=True,
-                         data_as_commands=True)
+        super().__init__(
+            bus,
+            _INIT_SEQUENCE,
+            **kwargs,
+            set_column_command=0x15,
+            set_row_command=0x75,
+            single_byte_bounds=True,
+            data_as_commands=True,
+        )
