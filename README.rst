@@ -47,7 +47,7 @@ Usage Example
     display = SSD1331(display_bus, width=96, height=64)
 
     # Make the display context
-    splash = displayio.Group(max_size=10)
+    splash = displayio.Group()
     display.show(splash)
 
     color_bitmap = displayio.Bitmap(96, 64, 1)
