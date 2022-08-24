@@ -58,7 +58,7 @@ _INIT_SEQUENCE = (
 class SSD1331(displayio.Display):
     """SSD1331 driver"""
 
-    def __init__(self, bus, **kwargs):
+    def __init__(self, bus: displayio.FourWire, **kwargs) -> None:
         super().__init__(
             bus,
             _INIT_SEQUENCE,
