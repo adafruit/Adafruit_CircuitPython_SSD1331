@@ -54,6 +54,7 @@ _INIT_SEQUENCE = (
     b"\xAF\x00"  # _DISPLAYON
 )
 
+
 # pylint: disable=too-few-public-methods
 class SSD1331(displayio.Display):
     """SSD1331 driver"""
