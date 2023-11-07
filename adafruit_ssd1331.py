@@ -26,7 +26,14 @@ Implementation Notes
 
 """
 
-import displayio
+# Starting in CircuitPython 9.x fourwire will be a seperate internal library
+# rather than a component of the displayio library
+try:
+    from fourwire import FourWire
+    from busdisplay import BusDisplay
+except ImportError:
+    from displayio import FourWire
+    from displayio import Display as BusDisplay
 
 __version__ = "0.0.0+auto.0"
 __repo__ = "https://github.com/adafruit/Adafruit_CircuitPython_SSD1331.git"
@@ -56,10 +63,10 @@ _INIT_SEQUENCE = (
 
 
 # pylint: disable=too-few-public-methods
-class SSD1331(displayio.Display):
+class SSD1331(BusDisplay):
     """SSD1331 driver"""
 
-    def __init__(self, bus: displayio.FourWire, **kwargs) -> None:
+    def __init__(self, bus: FourWire, **kwargs) -> None:
         super().__init__(
             bus,
             _INIT_SEQUENCE,
